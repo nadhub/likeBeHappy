@@ -7,6 +7,11 @@ function initialize(){
 		}
 
 		var map = new google.maps.Map(document.getElementById("mapId"), mapOptions);
+    	
+    	$("#myModal").on("shown.bs.modal", function () {
+        google.maps.event.trigger(map, "resize");
+    });
 	}
 
-google.maps.event.addDomListener(window, "load", initialize);
+    google.maps.event.addDomListener(window, "load", initialize);
+    

@@ -1,13 +1,44 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="app"> <!--<![endif]-->
+
 	<% include includes/head.ejs %>
     <body>
-    <div class="container">
+    <div class="container" ng-controller="MainCtrl">
         <% include includes/header.ejs %>
         <% include includes/jumbotron.ejs %>
+        <!-- modal   -->
+      
+
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Map</h4>
+                </div>
+                <div class="modal-body"> 
+                  <div class="row">
+                        <div id="mapId" class="col-md-8"></div>
+                        <div class="col-md-4"></div>
+                  </div>
+                </div>  
+                  
+                <div class="modal-footer">
+                  <a href="#" data-dismiss="modal" class="btn">Close</a>
+                  <a href="#" class="btn btn-primary">Save changes</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <!--  end modal  -->
+        
     <!-- <hr>	-->
     <br>
     <br>     
-
 
                       <div class="row">        
                                <div class="col-md-9 col-md-offset-3">
@@ -22,26 +53,26 @@
                                                     <input type="number" class="form-control" placeholder="Nombre de personnes"></input>
                                                 </div>	
                                                 <div class="form-group">
-                                                    <input type="submit" class="btn btn-primary" value="Valider"></input>
+                                                    <input type="submit" id="valideBtn" class="btn btn-primary" value="Valider" data-toggle="modal" href="#myModal" ng-click="showModal()"></input>
                                                 </div>	
                                        </form>	          			
                               </div>
                     </div> 
                     <br>
                     <div class="row">
-                       <div id="mapId">
-                       </div>  
+                      <!-- <div id="mapId">
+                       </div>  -->
                     </div>
                     <br>
                     <!--  row  -->
                     <div class="row">
-                            <div class="col-md-3 div-info">
+                            <div class="col-md-4 div-info">
                                 <h3>Info ....</h2>
                             </div>
-                            <div class="col-md-3 div-info">
+                            <div class="col-md-4 div-info">
                                 <h3>Info ....</h2>
                             </div>
-                            <div class="col-md-3 div-info">
+                            <div class="col-md-4 div-info">
                                 <h3>Pour nous contacter </h2>
                             </div>
                     </div>
