@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#id-carousel {
+	height: 300px;
+	background-color: #666699;
+}
+
+#mapId {
+	width: 50%;
+	height: 250px;
+}
+
+.jumbotron {
+
+	height: 300px;
+}
