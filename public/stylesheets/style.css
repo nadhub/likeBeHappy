@@ -1,17 +1,24 @@
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.my-title {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 20px;
 }
 
 a {
   color: #00B7FF;
 }
 .modal-dialog {
-    width: 80%;
+    width: 60%;
 }
 
 #mapId {
-	width: 80%;
+	width: 60%;
     height: 400px;
 }
 
@@ -24,9 +31,18 @@ a {
     margin: auto;
 }
 .div-info{
-    height: 200px;
-    background-color: rgb(209, 209, 196); 
+    width: 31%; 
+
+    height: 350px;
+    /*background-color: rgb(209, 209, 196); */
+    background-color: #EBE7E4;
+
         
+}
+
+.space-right{
+  margin-right: 40px;
+   
 }
 
 .div-info:nth-child(1-2){

@@ -8,6 +8,7 @@
     <body>
     <div class="container" ng-controller="MainCtrl">
         <% include includes/header.ejs %>
+        <br>
         <% include includes/jumbotron.ejs %>
         <!-- modal   -->
       
@@ -17,18 +18,20 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 class="modal-title">Map</h4>
+                  <h4 class="modal-title">Calcul de la distance et du prix</h4>
                 </div>
                 <div class="modal-body"> 
-                  <div class="row">
-                        <div id="mapId" class="col-md-8"></div>
-                        <div class="col-md-4"></div>
-                  </div>
+                      <div style="postion: relative;">
+                         <div id="panel" style="width: 30%; float: right;">Hello!!</div>
+                         <div id="mapId" style ="width: 70%;"></div>                                                 
+                      </div>
+                       
+                  
                 </div>  
                   
                 <div class="modal-footer">
                   <a href="#" data-dismiss="modal" class="btn">Close</a>
-                  <a href="#" class="btn btn-primary">Save changes</a>
+                  <a href="#" class="btn btn-primary">Reserver maintenant</a>
                 </div>
               </div>
             </div>
@@ -44,32 +47,31 @@
                                <div class="col-md-9 col-md-offset-3">
                                         <form class="form-inline">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Départ"></input>
+                                                    <input type="text" class="form-control" placeholder="Départ" id="depart" ng-model="depart"></input>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control" placeholder="Destination"></input>
+                                                    <input type="text" class="form-control" placeholder="Destination" id="destination" ng-model="destination"></input>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="number" class="form-control" placeholder="Nombre de personnes"></input>
                                                 </div>	
                                                 <div class="form-group">
-                                                    <input type="submit" id="valideBtn" class="btn btn-primary" value="Valider" data-toggle="modal" href="#myModal" ng-click="showModal()"></input>
+                                                    <input type="submit" id="valideBtn" class="btn btn-primary" value="Calculez" data-toggle="modal" href="#myModal" ng-click="showModal()"></input>
                                                 </div>	
                                        </form>	          			
                               </div>
-                    </div> 
-                    <br>
-                    <div class="row">
-                      <!-- <div id="mapId">
-                       </div>  -->
                     </div>
+                    <div ng-show="flashMessage">
+                        <p > <h3 class="text-center"> {{ msg }} <span><img style="width: 30px; height: 30px;" src="images/loader.gif"></span> </h3></p>
+                    </div> 
+                    <br>                   
                     <br>
                     <!--  row  -->
                     <div class="row">
-                            <div class="col-md-4 div-info">
+                            <div class="col-md-4 div-info space-right">
                                 <h3>Info ....</h2>
                             </div>
-                            <div class="col-md-4 div-info">
+                            <div class="col-md-4 div-info space-right">
                                 <h3>Info ....</h2>
                             </div>
                             <div class="col-md-4 div-info">
